@@ -1,39 +1,37 @@
 ---
-title: "How to install Ghost on Ubuntu"
-date: "2018-10-01"
-meta_title: "How to install & setup Ghost on Ubuntu 16.04 + 18.04"
-meta_description: "A full production install guide for how to install the Ghost professional publishing platform on a production server running Ubuntu 16.04 or 18.04."
+title: "How I installed Ghost-Gatsby"
+date: "2019-07-09"
+meta_title: "How to install & setup Ghost-Gatsby with DNS Made Easy, Vultr - Ubuntu 18.04, and Netlify"
+meta_description: "A full production install guide for how to install a headless Ghost professional publishing platform with Gatsby on a production server running Ubuntu 18.04, using DNS Made Easy, Vultr, and Netlify"
 keywords:
     - setup
     - production
     - server
     - ubuntu
+    - Gatsby
+    - Netlify
+    - Vultr
+    - DNS Made Easy
 ---
 
-A full guide for installing, configuring and running Ghost on your Ubuntu **16.04** or **18.04** server, for use in production
+A full guide for installing, configuring and running Ghost-Gatsby with DNS Made Easy, Vultr - Ubuntu 18.04, and Netlify, for use in production
 
 ## Overview
 
-This the official guide for self-hosting Ghost using our recommended stack of Ubuntu 16.04 or 18.04. If you're comfortable installing, maintaining and updating your own software, this is the place for you. By the end of this guide you'll have a fully configured Ghost install running in production using MySQL.
+This is a modified guide based off 
+- [The official Ghost guide](https://docs.ghost.org/install/ubuntu/) for self-hosting Ghost using their recommended stack of Ubuntu 18.04. 
+- [Delicious Brain / Ashley Rich - Wordpress Server Guide](https://deliciousbrains.com/hosting-wordpress-setup-secure-virtual-server/)
+- Random Google searches to figure out issues
+
+If you're comfortable installing, maintaining and updating your own software, this is the place for you. By the end of this guide you'll have a fully configured Ghost-Gatsby install running in production using MySQL.
 
 This install is **not** suitable for [local use](/install/local/) or [contributing](/install/source/) to core.
-
-<a class="sbox" href="https://www.digitalocean.com/docs/one-clicks/ghost/" target="_blank" rel="noopener">
-    <div class="sbox-image">
-        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="65.2 173.5 180 180"><style>.st0{fill:#0080ff}</style><g id="XMLID_229_"><g id="XMLID_690_"><g id="XMLID_691_"><g id="XMLID_44_"><g id="XMLID_48_"><path id="XMLID_49_" class="st0" d="M155.2 351.7v-34.2c36.2 0 64.3-35.9 50.4-74-5.1-14.1-16.4-25.4-30.5-30.5-38.1-13.8-74 14.2-74 50.4H67c0-57.7 55.8-102.7 116.3-83.8 26.4 8.3 47.5 29.3 55.7 55.7 18.9 60.6-26 116.4-83.8 116.4z"/></g><path id="XMLID_47_" class="st0" d="M155.3 317.6h-34v-34h34z"/><path id="XMLID_46_" class="st0" d="M121.3 343.8H95.1v-26.2h26.2z"/><path id="XMLID_45_" class="st0" d="M95.1 317.6H73.2v-21.9h21.9v21.9z"/></g></g></g></g></svg>
-    </div>
-    <div class="sbox-content">
-        <h4>Save time with our DigitalOcean One-Click Application</h4>
-        <p>This is a detailed manual install guide, but we've also teamed up with our friends over at DigitalOcean to  automate nearly the entire process and have you up and running in just a few minutes 👉</p>
-    </div>
-</a>
-
 
 ## Prerequisites
 
 The officially recommended production installation requires the following stack:
 
-* Ubuntu 16.04 or Ubuntu 18.04
+* Ubuntu 18.04
 * NGINX (minimum of 1.9.5 for SSL)
 * A [supported version](https://docs.ghost.org/faq/node-versions/) of [Node.js](https://nodejs.org)
 * MySQL 5.5, 5.6, or 5.7 (*not* >= 8.0)

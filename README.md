@@ -23,7 +23,7 @@ This is a modified guide based off
 - [Delicious Brain / Ashley Rich - Wordpress Server Guide](https://deliciousbrains.com/hosting-wordpress-setup-secure-virtual-server/)
 - [Official Ghost Gatsby Api Documentation](https://docs.ghost.org/api/gatsby/)
 - [Official Ghost+Netlify Guide](https://ghost.org/integrations/netlify/)
-- Random Google searches to figure stuff out
+- [Random Google searches to figure stuff out](https://lmgtfy.com/?q=Random+Google+Searches+To+Figure+Stuff+Out) 😉
 
 If you're comfortable installing, maintaining and updating your own software, and want to use Gatsby with Ghost, this guide is for for you. By the end of this guide you'll have a fully configured Ghost-Gatsby install running in production using MySQL.
 

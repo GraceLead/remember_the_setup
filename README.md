@@ -29,7 +29,7 @@ This install is **not** suitable for [local use](/install/local/) or [contributi
 
 ## Prerequisites
 
-The officially recommended production installation requires the following stack:
+The officially recommended production installation for Ghost requires the following stack:
 
 * Ubuntu 18.04
 * NGINX (minimum of 1.9.5 for SSL)
@@ -38,6 +38,16 @@ The officially recommended production installation requires the following stack:
 * Systemd
 * A server with at least 1GB memory
 * A registered domain name
+
+I also used:
+* [Netlify](https://www.netlify.com/) account - Free
+* [Github](https://github.com) account - Free
+* An account from [DNS Made Easy (affiliate link)](https://cp.dnsmadeeasy.com/u/134073). 
+    * I use this for my DNS Server because it consistently has some of the fastest DNS lookup speeds according to [SolveDNS](http://www.solvedns.com/dns-comparison/) but you can just as easily use Netlify's DNS
+* A $5/month VPS from [Vultr.com (affiliate link)](https://www.vultr.com/?ref=8193258-4F). 
+    * I use this to host the Ghost installation so I can create posts/pages anywhere I can access the internet. I also like that they have servers in Chicago.
+    * I guess you'll get $50.00 to test out their platform if you click through my affiliate link. Or don't - I don't mind - here's the link without my affiliate code [Vultr.com](https://vultr.com)
+
 
 Before getting started you should set an **A record** from the domain you plan to use, pointing at the server’s IP address and ensure that it's resolving correctly. This must be done in advance so that SSL can be properly configured during setup.
 

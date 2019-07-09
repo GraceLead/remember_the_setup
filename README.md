@@ -6,60 +6,60 @@ This part of the guide will ensure all prerequisites are met for installing the 
 
 Create a new user 👋
 Open up your terminal and login to your new server as the root user:
-# Login via SSH
+### Login via SSH
 ssh root@your_server_ip
 
-# Create a new user and follow prompts
+### Create a new user and follow prompts
 adduser <user>
 Note: Using the user name ghost causes conflicts with the Ghost-CLI, so it’s important to use an alternative name.
-# Add user to superuser group to unlock admin privileges
+### Add user to superuser group to unlock admin privileges
 usermod -aG sudo <user>
 
-# Then log in as the new user
+### Then log in as the new user
 su - <user>
 
 Update packages
 Ensure package lists and installed packages are up to date.
-# Update package lists
+### Update package lists
 sudo apt-get update
 
-# Update installed packages
+### Update installed packages
 sudo apt-get upgrade
 Follow any prompts to enter the password you just created in the previous step.
 
 Install NGINX
 Ghost uses an NGINX server and the SSL configuration requires NGINX 1.9.5 or higher.
-# Install NGINX
+### Install NGINX
 sudo apt-get install nginx
 If ufw was activated, the firewall allows HTTP and HTTPS connections. Open Firewall:
 sudo ufw allow 'Nginx Full'
 
 Install MySQL
 Next, you'll need to install MySQL to be used as the production database.
-# Install MySQL
+### Install MySQL
 sudo apt-get install mysql-server
 
 MySQL on Ubuntu 18.04
 If you’re running Ubuntu 18.04, a password is required to ensure MySQL is compatible with Ghost-CLI. This requires a few extra steps!
-# To set a password, run
+### To set a password, run
 sudo mysql
 
-# Now update your user with this password
-# Replace 'password' with your password, but keep the quote marks!
+### Now update your user with this password
+### Replace 'password' with your password, but keep the quote marks!
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
-# Then exit MySQL
+### Then exit MySQL
 quit
 
-# and login to your Ubuntu user again
+### and login to your Ubuntu user again
 su - <user>
 
 Install Node.js
 You will need to have a supported version of Node installed system-wide in the manner described below. If you have a different setup, you may encounter problems.
-# Add the NodeSource APT repository for Node 10
+### Add the NodeSource APT repository for Node 10
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
 
-# Install Node.js
+### Install Node.js
 sudo apt-get install -y nodejs
 
 
@@ -75,16 +75,16 @@ Note: Installing Ghost in the /root or home/<user> directories results in a brok
 
 Create a directory
 Create a directory for your installation, then set the owner and permissions.
-# We'll name ours 'ghost' in this example; you can use whatever you want
+### We'll name ours 'ghost' in this example; you can use whatever you want
 sudo mkdir -p /var/www/ghost
 
-# Replace <user> with the name of your user who will own this directory
+### Replace <user> with the name of your user who will own this directory
 sudo chown <user>:<user> /var/www/ghost
 
-# Set the correct permissions
+### Set the correct permissions
 sudo chmod 775 /var/www/ghost
 
-# Then navigate into it
+### Then navigate into it
 cd /var/www/ghost
 
 Run the install process
@@ -125,3 +125,4 @@ Choosing yes runs Ghost, and makes your site work.
 
 Future maintenance
 Once Ghost is properly set up it's important to keep it properly maintained and up to date. Fortunately, this is relatively easy to do using Ghost-CLI. Run ghost help for a list of available commands, or explore the full Ghost-CLI documentation.
+

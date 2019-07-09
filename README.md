@@ -21,33 +21,29 @@ A full guide for installing, configuring and running Ghost-Gatsby with DNS Made 
 This is a modified guide based off 
 - [The official Ghost guide](https://docs.ghost.org/install/ubuntu/) for self-hosting Ghost using their recommended stack of Ubuntu 18.04. 
 - [Delicious Brain / Ashley Rich - Wordpress Server Guide](https://deliciousbrains.com/hosting-wordpress-setup-secure-virtual-server/)
-- Random Google searches to figure out issues
+- [Official Ghost Gatsby Api Documentation](https://docs.ghost.org/api/gatsby/)
+- [Official Ghost+Netlify Guide](https://ghost.org/integrations/netlify/)
+- Random Google searches to figure stuff out
 
-If you're comfortable installing, maintaining and updating your own software, this is the place for you. By the end of this guide you'll have a fully configured Ghost-Gatsby install running in production using MySQL.
+If you're comfortable installing, maintaining and updating your own software, and want to use Gatsby with Ghost, this guide is for for you. By the end of this guide you'll have a fully configured Ghost-Gatsby install running in production using MySQL.
 
-This install is **not** suitable for [local use](/install/local/) or [contributing](/install/source/) to core.
-
-## Prerequisites
-
-The officially recommended production installation for Ghost requires the following stack:
+## Prerequisites (this guide has steps to install all of this)
 
 * Ubuntu 18.04
 * NGINX (minimum of 1.9.5 for SSL)
 * A [supported version](https://docs.ghost.org/faq/node-versions/) of [Node.js](https://nodejs.org)
 * MySQL 5.5, 5.6, or 5.7 (*not* >= 8.0)
 * Systemd
-* A server with at least 1GB memory
-* A registered domain name
-
-I also used:
-* [Netlify](https://www.netlify.com/) account - Free
-* [Github](https://github.com) account - Free
+* A registered domain name - I use [Google Domains](https://google.com/domains) because it's simply $12/yr with WHOIS privacy protection
+* A [Netlify](https://www.netlify.com/) account
+* A [Github](https://github.com) account - Free
 * An account from [DNS Made Easy (affiliate link)](https://cp.dnsmadeeasy.com/u/134073). 
     * I use this for my DNS Server because it consistently has some of the fastest DNS lookup speeds according to [SolveDNS](http://www.solvedns.com/dns-comparison/) but you can just as easily use Netlify's DNS
-* A $5/month VPS from [Vultr.com (affiliate link)](https://www.vultr.com/?ref=8193258-4F). 
+* A $5/month VPS with 1GB memory from [Vultr.com (affiliate link)](https://www.vultr.com/?ref=8193258-4F). 
     * I use this to host the Ghost installation so I can create posts/pages anywhere I can access the internet. I also like that they have servers in Chicago.
     * I guess you'll get $50.00 to test out their platform if you click through my affiliate link. Or don't - I don't mind - here's the link without my affiliate code [Vultr.com](https://vultr.com)
 
+## Step 1
 
 Before getting started you should set an **A record** from the domain you plan to use, pointing at the server’s IP address and ensure that it's resolving correctly. This must be done in advance so that SSL can be properly configured during setup.
 
